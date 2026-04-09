@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ibrar Yousafzai — Data Scientist</title>
+<title>Ibrar Yousafzai — Data Scientist (Entry-Level) | AI &amp; ML</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap');
 
@@ -75,7 +75,7 @@ header.scrolled {
 }
 .logo span { color: var(--accent2); }
 
-nav { display: flex; align-items: center; gap: 34px; }
+nav { display: flex; align-items: center; gap: 26px; }
 nav a {
   font-size: 0.76rem;
   font-weight: 400;
@@ -118,13 +118,18 @@ nav a:hover::after { width: 100%; }
   z-index: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
-  padding: 110px 6vw 80px;
-  gap: 80px;
+  align-items: start;
+  align-content: start;
+  padding: 76px 6vw 56px;
+  gap: 40px;
   overflow: hidden;
 }
 
-.hero-left { max-width: 560px; }
+.hero-left {
+  max-width: 560px;
+  position: relative;
+  z-index: 3;
+}
 
 .hero-eyebrow {
   display: flex;
@@ -135,7 +140,7 @@ nav a:hover::after { width: 100%; }
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent2);
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   opacity: 0;
   animation: fadeUp 0.6s ease 0.1s forwards;
 }
@@ -164,7 +169,7 @@ h1 em {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 26px;
+  margin-bottom: 18px;
   opacity: 0;
   animation: fadeUp 0.6s ease 0.38s forwards;
 }
@@ -172,8 +177,8 @@ h1 em {
 .hero-desc {
   font-size: 1rem;
   color: var(--muted);
-  line-height: 1.85;
-  margin-bottom: 44px;
+  line-height: 1.75;
+  margin-bottom: 28px;
   max-width: 440px;
   opacity: 0;
   animation: fadeUp 0.7s ease 0.5s forwards;
@@ -204,11 +209,58 @@ h1 em {
 .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--border); }
 .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 20px;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeUp 0.6s ease 0.72s forwards;
+}
+.social-links a {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+  border-bottom: 1px solid transparent;
+}
+.social-links a:hover { color: var(--accent); border-bottom-color: rgba(29,78,107,0.25); }
+.social-links a,
+.mob-social a,
+footer .footer-col a[href^="http"] {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.mob-social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px 22px;
+  margin-top: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  max-width: 90vw;
+}
+.mob-social a {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+}
+.mob-social a:hover { color: var(--accent); }
+
 /* Hero Right — animated data visual */
 .hero-right {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   opacity: 0;
   animation: fadeLeft 0.8s ease 0.7s forwards;
 }
@@ -217,7 +269,7 @@ h1 em {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 4px;
-  padding: 22px 24px;
+  padding: 18px 20px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.04);
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -229,29 +281,66 @@ h1 em {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
-/* Bar chart viz */
-.bar-chart { display: flex; align-items: flex-end; gap: 6px; height: 56px; }
-.bar {
-  flex: 1;
-  background: var(--accent);
-  border-radius: 2px 2px 0 0;
-  position: relative;
-  transform-origin: bottom;
-  animation: growBar 1s ease calc(var(--d) * 0.12s + 0.9s) both;
-  opacity: 0.15;
+/* Hero brand card — practice stack + workflow graphic */
+.stack-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4px;
 }
-.bar.active { opacity: 1; }
-.bar:hover { opacity: 0.85; cursor: default; }
-@keyframes growBar {
-  from { transform: scaleY(0); opacity: 0; }
-  to   { transform: scaleY(1); opacity: var(--o, 1); }
+.stack-pills span {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(29,78,107,0.07);
+  border: 1px solid rgba(29,78,107,0.12);
+  padding: 7px 13px;
+  border-radius: 2px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.data-card:hover .stack-pills span {
+  border-color: rgba(29,78,107,0.2);
+  background: rgba(29,78,107,0.09);
+}
+.brand-viz {
+  margin-top: 10px;
+  padding: 8px 0 2px;
+}
+.brand-viz svg { display: block; width: 100%; max-width: 100%; height: auto; }
+.brand-viz .viz-line {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: vizDraw 1.35s cubic-bezier(0.4, 0, 0.2, 1) 0.8s forwards;
+}
+@keyframes vizDraw {
+  to { stroke-dashoffset: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand-viz .viz-line { animation: none; stroke-dashoffset: 0; }
+}
+.brand-card-foot {
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  line-height: 1.55;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  text-transform: uppercase;
+}
+.brand-card-foot em {
+  font-style: normal;
+  color: var(--accent2);
+  font-weight: 500;
 }
 
 /* Skills progress */
-.skill-rows { display: flex; flex-direction: column; gap: 12px; }
+.skill-rows { display: flex; flex-direction: column; gap: 10px; }
 .skill-row-item { display: flex; flex-direction: column; gap: 5px; }
 .skill-row-top { display: flex; justify-content: space-between; align-items: center; }
 .skill-name { font-size: 0.76rem; font-weight: 500; color: var(--ink); }
@@ -268,7 +357,7 @@ h1 em {
 
 /* Stats row */
 .stat-chips { display: flex; gap: 1px; background: var(--border); border-radius: 3px; overflow: hidden; }
-.stat-chip { flex: 1; background: var(--white); padding: 16px 12px; text-align: center; }
+.stat-chip { flex: 1; background: var(--white); padding: 12px 10px; text-align: center; }
 .stat-chip-num {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.9rem;
@@ -280,10 +369,10 @@ h1 em {
 .stat-chip-lbl { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
 
 /* ─── SECTION BASE ─── */
-section { position: relative; z-index: 1; padding: 96px 6vw; }
-.section-tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent2); margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+section { position: relative; z-index: 1; padding: 64px 6vw; }
+.section-tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent2); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
 .section-tag::before { content: ''; width: 18px; height: 1px; background: var(--accent2); }
-.section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 600; color: var(--ink); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 52px; }
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 600; color: var(--ink); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 36px; }
 .section-title em { font-style: italic; color: var(--accent); }
 
 /* ─── PROJECTS ─── */
@@ -295,13 +384,19 @@ section { position: relative; z-index: 1; padding: 96px 6vw; }
   display: grid;
   grid-template-columns: 64px 1fr 120px;
   align-items: start;
-  gap: 24px;
-  padding: 36px 0;
+  gap: 20px;
+  padding: 26px 0;
   border-bottom: 1px solid var(--border);
   transition: background 0.2s;
   position: relative;
   overflow: hidden;
 }
+a.project-item {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+a.project-item:visited { color: inherit; }
 .project-item::before {
   content: '';
   position: absolute;
@@ -333,7 +428,17 @@ section { position: relative; z-index: 1; padding: 96px 6vw; }
   transition: color 0.2s;
 }
 .project-item:hover .proj-title { color: var(--accent); }
-.proj-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.75; max-width: 520px; margin-bottom: 14px; }
+.proj-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.7; max-width: 520px; margin-bottom: 10px; }
+.proj-cta {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+a.project-item:hover .proj-cta { color: var(--accent2); }
 .proj-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .ptag {
   font-size: 0.63rem;
@@ -423,11 +528,11 @@ section { position: relative; z-index: 1; padding: 96px 6vw; }
 footer {
   background: var(--ink);
   color: rgba(255,255,255,0.4);
-  padding: 56px 6vw 36px;
+  padding: 40px 6vw 28px;
   position: relative;
   z-index: 1;
 }
-.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 24px; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 28px; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 18px; }
 .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: #fff; text-decoration: none; display: block; margin-bottom: 10px; }
 .footer-logo span { color: var(--accent2); }
 .footer-desc { font-size: 0.8rem; line-height: 1.8; }
@@ -437,7 +542,7 @@ footer {
 .footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 0.72rem; }
 
 /* ─── MOBILE NAV ─── */
-.mob-nav { display: none; position: fixed; inset: 0; background: var(--white); z-index: 200; flex-direction: column; align-items: center; justify-content: center; gap: 28px; }
+.mob-nav { display: none; position: fixed; inset: 0; background: var(--white); z-index: 200; flex-direction: column; align-items: center; justify-content: center; gap: 22px; }
 .mob-nav.open { display: flex; }
 .mob-nav a { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; color: var(--ink); text-decoration: none; transition: color 0.2s; }
 .mob-nav a:hover { color: var(--accent); }
@@ -462,7 +567,7 @@ footer {
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 860px) {
-  #hero { grid-template-columns: 1fr; gap: 48px; }
+  #hero { grid-template-columns: 1fr; gap: 28px; padding-top: 72px; padding-bottom: 48px; align-items: start; }
   .hero-right { display: none; }
   nav { display: none; }
   .hamburger { display: flex; }
@@ -470,6 +575,166 @@ footer {
   .footer-bottom { flex-direction: column; text-align: center; }
   .project-item { grid-template-columns: 48px 1fr; }
   .proj-metric { display: none; }
+}
+
+/* ─── ABOUT & SKILLS ─── */
+#about { background: var(--surface); }
+.about-intro { max-width: 720px; font-size: 0.95rem; color: var(--muted); line-height: 1.75; margin-bottom: 32px; }
+.about-intro p + p { margin-top: 1em; }
+.about-sub { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--ink); margin: 36px 0 16px; letter-spacing: -0.02em; }
+.about-block { max-width: 720px; margin-bottom: 28px; }
+.about-block .about-sub { margin: 0 0 12px; }
+.about-prose { font-size: 0.95rem; color: var(--muted); line-height: 1.75; }
+.about-prose + .about-prose { margin-top: 0.95em; }
+.about-closing {
+  max-width: 640px;
+  font-size: 0.95rem;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 16px;
+  line-height: 1.7;
+}
+.do-list { list-style: none; display: grid; gap: 8px; max-width: 640px; }
+.do-list li {
+  font-size: 0.88rem; color: var(--muted); line-height: 1.65;
+  padding-left: 22px; position: relative;
+}
+.do-list li::before {
+  content: ''; position: absolute; left: 0; top: 0.55em;
+  width: 6px; height: 6px; background: var(--accent2); border-radius: 1px;
+}
+
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+.skill-cat {
+  background: var(--white); border: 1px solid var(--border); padding: 18px 20px; border-radius: 3px;
+}
+.skill-cat h3 { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent2); margin-bottom: 10px; }
+.skill-cat p { font-size: 0.88rem; color: var(--muted); line-height: 1.75; }
+
+/* ─── CERTIFICATIONS & VISION ─── */
+#credentials { background: var(--white); }
+.cert-groups { display: flex; flex-direction: column; gap: 26px; max-width: 720px; }
+.cert-group-title {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin-bottom: 10px;
+}
+.cert-group-title.cert-biz { color: #6b5b8c; }
+.cert-list { list-style: none; max-width: 640px; }
+.cert-list li {
+  font-size: 0.9rem; color: var(--muted); line-height: 1.65;
+  padding: 10px 0; border-bottom: 1px solid var(--border);
+  padding-left: 20px; position: relative;
+}
+.cert-list li::before {
+  content: '✓'; position: absolute; left: 0; color: var(--accent); font-size: 0.75rem; font-weight: 600;
+}
+.vision-box {
+  margin-top: 36px; max-width: 720px;
+  padding: 22px 24px; background: var(--surface); border-left: 3px solid var(--accent);
+  font-size: 0.95rem; color: var(--muted); line-height: 1.75;
+}
+.vision-box .vision-lead { color: var(--ink); font-weight: 600; }
+
+/* ─── KHYBER FUTURE HUB / COMMUNITY ─── */
+#community { background: var(--surface); }
+.kfh-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.kfh-welcome {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.35rem, 2.8vw, 1.75rem);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+.kfh-prose {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.kfh-prose + .kfh-prose { margin-top: 1em; }
+.kfh-rule {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 28px 0;
+}
+.kfh-h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.28rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 14px;
+  letter-spacing: -0.02em;
+}
+.kfh-list {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  margin: 12px 0 8px;
+  padding: 0;
+}
+.kfh-list li {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.65;
+  padding-left: 18px;
+  position: relative;
+}
+.kfh-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  background: var(--accent2);
+  border-radius: 1px;
+}
+.kfh-agenda-block { margin-top: 20px; }
+.kfh-agenda-item { margin-bottom: 18px; }
+.kfh-agenda-item h4 {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+.kfh-agenda-item p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.kfh-pull {
+  margin-top: 12px;
+  font-size: 0.92rem;
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.75;
+}
+.kfh-pull strong { color: var(--ink); font-style: normal; font-weight: 600; }
+.kfh-cta {
+  text-align: center;
+  margin-top: 36px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.kfh-cta .btn { margin: 0 6px 12px; }
+.kfh-cta-note {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 14px;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
 }
 </style>
 </head>
@@ -479,18 +744,30 @@ footer {
 <div class="mob-nav" id="mobNav">
   <button class="mob-close" onclick="closeNav()">✕</button>
   <a href="#hero" onclick="closeNav()">Home</a>
+  <a href="#about" onclick="closeNav()">About</a>
+  <a href="#skills" onclick="closeNav()">Skills</a>
   <a href="#projects" onclick="closeNav()">Projects</a>
-  <a href="#testimonials" onclick="closeNav()">Testimonials</a>
-  <a href="mailto:ibrar@example.com" onclick="closeNav()">Contact</a>
+  <a href="#credentials" onclick="closeNav()">Certifications</a>
+  <a href="#community" onclick="closeNav()">Community</a>
+  <a href="#contact" onclick="closeNav()">Contact</a>
+  <div class="mob-social" aria-label="Social profiles">
+    <a href="https://www.kaggle.com/ibraryousafzai" target="_blank" rel="noopener noreferrer" onclick="setTimeout(closeNav, 300)">Kaggle</a>
+    <a href="https://github.com/ibrar-yousafzai" target="_blank" rel="noopener noreferrer" onclick="setTimeout(closeNav, 300)">GitHub</a>
+    <a href="https://www.linkedin.com/in/ibrar-yousafzai-815228178" target="_blank" rel="noopener noreferrer" onclick="setTimeout(closeNav, 300)">LinkedIn</a>
+    <a href="https://www.facebook.com/share/1GKTbjYtCY/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" onclick="setTimeout(closeNav, 300)">Facebook</a>
+  </div>
 </div>
 
 <!-- Header -->
 <header id="header">
   <a href="#hero" class="logo">IY<span>.</span></a>
   <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="mailto:ibrar@example.com" class="nav-cta">Hire Me</a>
+    <a href="#credentials">Certs</a>
+    <a href="#community">Community</a>
+    <a href="#contact" class="nav-cta">Contact</a>
   </nav>
   <button class="hamburger" onclick="openNav()">
     <span></span><span></span><span></span>
@@ -502,52 +779,77 @@ footer {
   <div class="hero-left">
     <div class="hero-eyebrow">
       <div class="hero-eyebrow-line"></div>
-      Data Scientist · Lahore, Pakistan
+      BS Artificial Intelligence · SZABIST Islamabad
     </div>
     <h1>Ibrar<em>Yousafzai</em></h1>
-    <div class="hero-subtitle">Turning data into decisions</div>
+    <div class="hero-subtitle">Data Scientist (Entry-Level) | AI &amp; Machine Learning, Pakistan</div>
     <p class="hero-desc">
-      I build machine learning models, data pipelines, and analytical systems that help organisations make faster, smarter decisions — grounded in rigorous statistical thinking.
+      I focus on Artificial Intelligence, Machine Learning, and data-driven analysis — building real-world solutions that create meaningful impact. I bring strong critical thinking and structured problem-solving to every project. Student at SZABIST Islamabad.
     </p>
     <div class="hero-btns">
       <a href="#projects" class="btn btn-solid">View Projects</a>
-      <a href="mailto:ibrar@example.com" class="btn btn-ghost">Get in Touch</a>
+      <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+    </div>
+    <div class="social-links" aria-label="Social profiles">
+      <a href="https://www.kaggle.com/ibraryousafzai" target="_blank" rel="noopener noreferrer">Kaggle</a>
+      <a href="https://github.com/ibrar-yousafzai" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/ibrar-yousafzai-815228178" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://www.facebook.com/share/1GKTbjYtCY/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook</a>
     </div>
   </div>
 
   <div class="hero-right">
-    <!-- Animated bar chart card -->
+    <!-- Brand / practice stack -->
     <div class="data-card">
-      <div class="card-label">Model Accuracy — Last 6 Releases</div>
-      <div class="bar-chart">
-        <div class="bar active" style="height:62%;--d:0;--o:1;background:#1d4e6b;opacity:0.5;"></div>
-        <div class="bar active" style="height:74%;--d:1;background:#1d4e6b;opacity:0.6;"></div>
-        <div class="bar active" style="height:68%;--d:2;background:#1d4e6b;opacity:0.65;"></div>
-        <div class="bar active" style="height:80%;--d:3;background:#1d4e6b;opacity:0.75;"></div>
-        <div class="bar active" style="height:88%;--d:4;background:#1d4e6b;opacity:0.85;"></div>
-        <div class="bar active" style="height:94%;--d:5;background:var(--accent2);opacity:1;"></div>
+      <div class="card-label">Practice stack · IY</div>
+      <div class="stack-pills" aria-label="Core tools and methods">
+        <span>Python</span>
+        <span>SQL</span>
+        <span>EDA</span>
+        <span>Scikit-learn</span>
+        <span>Visualization</span>
+        <span>Colab</span>
       </div>
+      <div class="brand-viz" aria-hidden="true">
+        <svg viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg" role="presentation">
+          <defs>
+            <linearGradient id="iyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#1d4e6b;stop-opacity:0.35"/>
+              <stop offset="55%" style="stop-color:#1d4e6b;stop-opacity:0.55"/>
+              <stop offset="100%" style="stop-color:#c8733a;stop-opacity:0.75"/>
+            </linearGradient>
+          </defs>
+          <path class="viz-line" pathLength="1" d="M24 44 C 70 20, 90 68, 136 44 S 202 20, 248 44 L 296 44" fill="none" stroke="url(#iyGrad)" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="28" cy="44" r="9" fill="#1d4e6b" opacity="0.92"/>
+          <circle cx="136" cy="44" r="9" fill="#1d4e6b" opacity="0.55"/>
+          <circle cx="244" cy="44" r="9" fill="#c8733a" opacity="0.9"/>
+          <text x="28" y="68" text-anchor="middle" fill="#7a7a72" font-family="Outfit, sans-serif" font-size="9" font-weight="500" letter-spacing="0.12em">DATA</text>
+          <text x="136" y="68" text-anchor="middle" fill="#7a7a72" font-family="Outfit, sans-serif" font-size="9" font-weight="500" letter-spacing="0.12em">MODEL</text>
+          <text x="244" y="68" text-anchor="middle" fill="#7a7a72" font-family="Outfit, sans-serif" font-size="9" font-weight="500" letter-spacing="0.12em">INSIGHT</text>
+        </svg>
+      </div>
+      <p class="brand-card-foot">Structured analysis · <em>Clear communication</em> · Reproducible work</p>
     </div>
 
     <!-- Skill progress bars -->
     <div class="data-card">
-      <div class="card-label">Core Proficiency</div>
+      <div class="card-label">Core focus</div>
       <div class="skill-rows" id="skillRows">
         <div class="skill-row-item">
-          <div class="skill-row-top"><span class="skill-name">Machine Learning</span><span class="skill-pct">95%</span></div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" style="--w:95%"></div></div>
+          <div class="skill-row-top"><span class="skill-name">Python &amp; SQL</span><span class="skill-pct">—</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" style="--w:88%"></div></div>
         </div>
         <div class="skill-row-item">
-          <div class="skill-row-top"><span class="skill-name">Python / SQL</span><span class="skill-pct">92%</span></div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" style="--w:92%"></div></div>
+          <div class="skill-row-top"><span class="skill-name">EDA &amp; visualization</span><span class="skill-pct">—</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" style="--w:82%"></div></div>
         </div>
         <div class="skill-row-item">
-          <div class="skill-row-top"><span class="skill-name">Deep Learning</span><span class="skill-pct">85%</span></div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" style="--w:85%"></div></div>
+          <div class="skill-row-top"><span class="skill-name">Scikit-learn &amp; modeling</span><span class="skill-pct">—</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" style="--w:78%"></div></div>
         </div>
         <div class="skill-row-item">
-          <div class="skill-row-top"><span class="skill-name">Data Visualisation</span><span class="skill-pct">90%</span></div>
-          <div class="skill-bar-bg"><div class="skill-bar-fill" style="--w:90%"></div></div>
+          <div class="skill-row-top"><span class="skill-name">Colab &amp; GitHub workflow</span><span class="skill-pct">—</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" style="--w:80%"></div></div>
         </div>
       </div>
     </div>
@@ -555,21 +857,106 @@ footer {
     <!-- Stats -->
     <div class="stat-chips">
       <div class="stat-chip">
-        <div class="stat-chip-num">6<sup>+</sup></div>
-        <div class="stat-chip-lbl">Yrs. Exp.</div>
+        <div class="stat-chip-num">BS</div>
+        <div class="stat-chip-lbl">AI · SZABIST Islamabad</div>
       </div>
       <div class="stat-chip">
-        <div class="stat-chip-num">30<sup>+</sup></div>
-        <div class="stat-chip-lbl">Projects</div>
+        <div class="stat-chip-num">2</div>
+        <div class="stat-chip-lbl">Featured projects</div>
       </div>
       <div class="stat-chip">
-        <div class="stat-chip-num">12<sup>+</sup></div>
-        <div class="stat-chip-lbl">Clients</div>
+        <div class="stat-chip-num">6</div>
+        <div class="stat-chip-lbl">Certificates</div>
       </div>
       <div class="stat-chip">
-        <div class="stat-chip-num">4<sup>+</sup></div>
-        <div class="stat-chip-lbl">Publications</div>
+        <div class="stat-chip-num">∞</div>
+        <div class="stat-chip-lbl">Learning</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="reveal">
+    <div class="section-tag">Introduction</div>
+    <div class="section-title">About <em>Me</em></div>
+  </div>
+  <div class="about-intro reveal">
+    <p>
+      I am an aspiring Data Scientist with a strong focus on Artificial Intelligence, Machine Learning, and data analysis — passionate about building real-world solutions that create meaningful impact.
+    </p>
+  </div>
+  <div class="about-block reveal reveal-delay-1">
+    <h3 class="about-sub">Developing my expertise in</h3>
+    <ul class="do-list">
+      <li>Python for Data Science</li>
+      <li>SQL &amp; data analysis</li>
+      <li>Machine learning &amp; AI concepts</li>
+      <li>Data visualization</li>
+      <li>Critical thinking &amp; problem-solving</li>
+    </ul>
+  </div>
+  <div class="about-block reveal reveal-delay-2">
+    <h3 class="about-sub">Certifications &amp; mindset</h3>
+    <p class="about-prose">
+      I have earned multiple Google certifications — including Project Management, Business Intelligence, and Prompting Essentials (alongside further credentials listed below) — which strengthen how I approach problems with a structured, data-driven mindset.
+    </p>
+  </div>
+  <div class="about-block reveal">
+    <h3 class="about-sub">Khyber Future Hub (KFH)</h3>
+    <p class="about-prose">
+      Beyond my technical journey, I am the <strong style="color:var(--ink);font-weight:500;">Founder of Khyber Future Hub (KFH)</strong> — a community initiative focused on empowering youth through technology, learning, and opportunities in AI and digital skills.
+    </p>
+    <p class="about-prose" style="margin-top:0.65em;">Through KFH, I aim to:</p>
+    <ul class="do-list" style="margin-top:8px;">
+      <li>Support students in learning modern tech skills</li>
+      <li>Share resources and career opportunities</li>
+      <li>Build a collaborative, growth-focused tech community</li>
+    </ul>
+  </div>
+  <div class="about-block reveal reveal-delay-1">
+    <p class="about-prose">
+      I believe that technology — especially AI — has the power to transform industries, solve real-world challenges, and create opportunities for the future.
+    </p>
+  </div>
+  <div class="about-block reveal reveal-delay-2">
+    <h3 class="about-sub">Open to</h3>
+    <ul class="do-list">
+      <li>Data Science / Data Analyst opportunities</li>
+      <li>Internships in AI &amp; data</li>
+      <li>Collaboration on impactful tech projects</li>
+    </ul>
+    <p class="about-closing">Let’s connect, collaborate, and grow together in the world of AI and technology.</p>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+  <div class="reveal">
+    <div class="section-tag">Toolkit</div>
+    <div class="section-title">Skills &amp; <em>Tools</em></div>
+  </div>
+  <div class="skills-grid reveal reveal-delay-1">
+    <div class="skill-cat">
+      <h3>Programming</h3>
+      <p>Python, SQL</p>
+    </div>
+    <div class="skill-cat">
+      <h3>Data science</h3>
+      <p>Data analysis, EDA, data visualization</p>
+    </div>
+    <div class="skill-cat">
+      <h3>Thinking &amp; problem-solving</h3>
+      <p>Critical thinking, structured problem-solving</p>
+    </div>
+    <div class="skill-cat">
+      <h3>Machine learning</h3>
+      <p>Scikit-learn, model building</p>
+    </div>
+    <div class="skill-cat">
+      <h3>Tools</h3>
+      <p>Pandas, NumPy, Matplotlib, Seaborn, Google Colab, GitHub</p>
     </div>
   </div>
 </section>
@@ -577,144 +964,119 @@ footer {
 <!-- Projects -->
 <section id="projects">
   <div class="reveal">
-    <div class="section-tag">Selected Work</div>
-    <div class="section-title">Projects & <em>Research</em></div>
+    <div class="section-tag">Selected work</div>
+    <div class="section-title">Projects</div>
   </div>
   <div class="projects-list">
 
-    <div class="project-item reveal">
+    <a href="projects/air-quality-prediction.html" class="project-item reveal">
       <div class="proj-num">01</div>
       <div>
-        <div class="proj-title">Customer Churn Prediction Engine</div>
-        <p class="proj-desc">End-to-end ML pipeline for a telecom client — feature engineering, XGBoost ensemble model, and a real-time scoring API serving 2M+ customers daily.</p>
-        <div class="proj-tags"><span class="ptag">XGBoost</span><span class="ptag">Python</span><span class="ptag">FastAPI</span><span class="ptag">AWS</span></div>
+        <div class="proj-title">Air quality prediction</div>
+        <p class="proj-desc">Built a machine learning model to predict air pollution levels using environmental data — helping understand pollution trends and support better decision-making.</p>
+        <div class="proj-tags"><span class="ptag">Python</span><span class="ptag">ML</span><span class="ptag">Environmental data</span></div>
+        <span class="proj-cta">View case study →</span>
       </div>
       <div class="proj-metric">
-        <div class="proj-metric-num">94%</div>
-        <div class="proj-metric-lbl">Accuracy</div>
+        <div class="proj-metric-num">Env</div>
+        <div class="proj-metric-lbl">Domain</div>
       </div>
-    </div>
+    </a>
 
-    <div class="project-item reveal reveal-delay-1">
+    <a href="projects/customer-churn-prediction.html" class="project-item reveal reveal-delay-1">
       <div class="proj-num">02</div>
       <div>
-        <div class="proj-title">NLP Sentiment Analysis Platform</div>
-        <p class="proj-desc">Fine-tuned transformer model (BERT) for Urdu and English mixed-language reviews. Deployed as a SaaS dashboard used by 3 e-commerce brands.</p>
-        <div class="proj-tags"><span class="ptag">BERT</span><span class="ptag">HuggingFace</span><span class="ptag">NLP</span><span class="ptag">Docker</span></div>
+        <div class="proj-title">Customer churn prediction</div>
+        <p class="proj-desc">Developed a churn prediction approach for telecom-style use cases — identifying higher-risk customers to help reduce customer loss.</p>
+        <div class="proj-tags"><span class="ptag">Classification</span><span class="ptag">Python</span><span class="ptag">Scikit-learn</span></div>
+        <span class="proj-cta">View case study →</span>
       </div>
       <div class="proj-metric">
-        <div class="proj-metric-num">91%</div>
-        <div class="proj-metric-lbl">F1 Score</div>
+        <div class="proj-metric-num">Telco</div>
+        <div class="proj-metric-lbl">Focus</div>
       </div>
-    </div>
-
-    <div class="project-item reveal reveal-delay-2">
-      <div class="proj-num">03</div>
-      <div>
-        <div class="proj-title">Supply Chain Demand Forecasting</div>
-        <p class="proj-desc">Time-series forecasting with Prophet + LSTM hybrid for a FMCG company. Reduced overstock inventory by 18% in the first quarter post-deployment.</p>
-        <div class="proj-tags"><span class="ptag">LSTM</span><span class="ptag">Prophet</span><span class="ptag">SQL</span><span class="ptag">Tableau</span></div>
-      </div>
-      <div class="proj-metric">
-        <div class="proj-metric-num">18%</div>
-        <div class="proj-metric-lbl">Cost Saved</div>
-      </div>
-    </div>
-
-    <div class="project-item reveal reveal-delay-3">
-      <div class="proj-num">04</div>
-      <div>
-        <div class="proj-title">Medical Image Classification</div>
-        <p class="proj-desc">CNN-based classifier for diabetic retinopathy detection from fundus images. Achieved specialist-level accuracy; presented at a regional AI in Healthcare conference.</p>
-        <div class="proj-tags"><span class="ptag">CNN</span><span class="ptag">PyTorch</span><span class="ptag">OpenCV</span><span class="ptag">Research</span></div>
-      </div>
-      <div class="proj-metric">
-        <div class="proj-metric-num">97%</div>
-        <div class="proj-metric-lbl">AUC-ROC</div>
-      </div>
-    </div>
-
-    <div class="project-item reveal">
-      <div class="proj-num">05</div>
-      <div>
-        <div class="proj-title">Real-Time Fraud Detection System</div>
-        <p class="proj-desc">Streaming anomaly detection on financial transactions using Kafka + Isolation Forest. Processes 50,000 events per second with sub-100ms latency.</p>
-        <div class="proj-tags"><span class="ptag">Kafka</span><span class="ptag">Spark</span><span class="ptag">Anomaly Detection</span><span class="ptag">GCP</span></div>
-      </div>
-      <div class="proj-metric">
-        <div class="proj-metric-num">99%</div>
-        <div class="proj-metric-lbl">Precision</div>
-      </div>
-    </div>
+    </a>
 
   </div>
 </section>
 
-<!-- Testimonials -->
-<section id="testimonials">
+<!-- Certifications & vision -->
+<section id="credentials">
   <div class="reveal">
-    <div class="section-tag">Testimonials</div>
-    <div class="section-title">What Clients <em>Say</em></div>
+    <div class="section-tag">Credentials</div>
+    <div class="section-title">Certifications &amp; <em>vision</em></div>
   </div>
-  <div class="test-grid">
-
-    <div class="tcard reveal">
-      <div class="tcard-quote">"</div>
-      <div class="tcard-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      <p class="tcard-text">"Ibrar's churn model transformed how we approach retention. He didn't just build a model — he explained every decision clearly and made sure our team could own it after handover."</p>
-      <div class="tcard-author">
-        <div class="tcard-av">AK</div>
-        <div><div class="tcard-name">Ayesha Karim</div><div class="tcard-role">Head of Analytics, Telecom Co.</div></div>
-      </div>
+  <div class="cert-groups reveal reveal-delay-1">
+    <div class="cert-group">
+      <h3 class="cert-group-title">Google</h3>
+      <ul class="cert-list">
+        <li>Google Project Management Professional Certificate</li>
+        <li>Google Business Intelligence Professional Certificate</li>
+        <li>Google AI Essentials</li>
+        <li>Google Prompting Essentials</li>
+      </ul>
     </div>
-
-    <div class="tcard reveal reveal-delay-1">
-      <div class="tcard-quote">"</div>
-      <div class="tcard-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      <p class="tcard-text">"The NLP platform Ibrar built handles our mixed-language reviews better than anything we tested off the shelf. Delivered ahead of schedule with clean, documented code."</p>
-      <div class="tcard-author">
-        <div class="tcard-av" style="background:#2d6a4f;">ZM</div>
-        <div><div class="tcard-name">Zaid Mirza</div><div class="tcard-role">CTO, Dastaan E-Commerce</div></div>
-      </div>
+    <div class="cert-group">
+      <h3 class="cert-group-title">Cybersecurity</h3>
+      <ul class="cert-list">
+        <li>Google Cybersecurity Professional Certificate</li>
+      </ul>
     </div>
-
-    <div class="tcard reveal reveal-delay-2">
-      <div class="tcard-quote">"</div>
-      <div class="tcard-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      <p class="tcard-text">"Working with Ibrar on demand forecasting saved us millions in overstock. His approach was rigorous, collaborative, and he truly understood our supply chain constraints."</p>
-      <div class="tcard-author">
-        <div class="tcard-av" style="background:#7a4f2d;">SR</div>
-        <div><div class="tcard-name">Sara Raza</div><div class="tcard-role">Supply Chain Director, FMCG Brand</div></div>
-      </div>
+    <div class="cert-group">
+      <h3 class="cert-group-title cert-biz">Business &amp; Communication</h3>
+      <ul class="cert-list">
+        <li>LUMSx – Business Communication &amp; AI for Professionals</li>
+      </ul>
     </div>
+  </div>
+  <div class="vision-box reveal reveal-delay-2">
+    <span class="vision-lead">Vision &amp; goal —</span>
+    I aim to grow as a professional Data Scientist and AI engineer who builds intelligent, ethical systems that solve real problems — while scaling impact through community work with Khyber Future Hub and partnerships that put data and AI to work for people and organisations.
+  </div>
+</section>
 
+<!-- Khyber Future Hub — community -->
+<section id="community" class="kfh-section">
+  <div class="reveal">
+    <div class="section-tag">Community</div>
+    <div class="section-title">Khyber Future <em>Hub</em></div>
+  </div>
+
+  
+  <div class="kfh-cta reveal reveal-delay-2">
+    <a href="https://chat.whatsapp.com/ECea3vF80Td0HLObeHBn4G" class="btn btn-solid" target="_blank" rel="noopener noreferrer">Join the community</a>
+    <a href="#contact" class="btn btn-ghost">Get in touch</a>
+    <p class="kfh-cta-note">Opens the official KFH WhatsApp Community — learning, opportunities, and more.</p>
   </div>
 </section>
 
 <!-- Footer -->
-<footer>
+<footer id="contact">
   <div class="footer-grid">
     <div>
       <a href="#hero" class="footer-logo">Ibrar Yousafzai<span>.</span></a>
-      <p class="footer-desc">Data Scientist building intelligent systems that create measurable business impact.</p>
+      <p class="footer-desc">Open to Data Science &amp; Data Analyst roles, AI and data internships, and collaboration on impactful tech projects. Founder, Khyber Future Hub (KFH). Let’s connect via the links beside — always happy to learn and build together.</p>
     </div>
     <div class="footer-col">
       <h4>Navigation</h4>
       <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
-      <a href="#testimonials">Testimonials</a>
+      <a href="#credentials">Certifications</a>
+      <a href="#community">KFH community</a>
     </div>
     <div class="footer-col">
-      <h4>Contact</h4>
-      <a href="mailto:ibrar@example.com">ibrar@example.com</a>
-      <a href="tel:+923000000000">+92 300 0000000</a>
-      <a href="#">LinkedIn</a>
-      <a href="#">GitHub</a>
+      <h4>Connect</h4>
+      <a href="https://www.kaggle.com/ibraryousafzai" target="_blank" rel="noopener noreferrer">Kaggle</a>
+      <a href="https://github.com/ibrar-yousafzai" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/ibrar-yousafzai" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://www.facebook.com/share/1GKTbjYtCY/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook</a>
     </div>
   </div>
   <div class="footer-bottom">
     <span>© 2026 Ibrar Yousafzai. All rights reserved.</span>
-    <span>Data Scientist · Islamabad, Pakistan</span>
+    <span>Islamabad, Pakistan</span>
   </div>
 </footer>
 
